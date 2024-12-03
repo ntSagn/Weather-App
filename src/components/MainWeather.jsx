@@ -34,13 +34,13 @@ const MainWeather = ({ weatherData }) => {
       setCurrentTime(new Date());
     }, 1000);
     return () => clearInterval(interval);
-  }, [currentTime]);
+  }, []);
 
   var day = currentTime.getDate();
   var month = currentTime.getMonth() + 1; // Tháng trong JavaScript bắt đầu từ 0
   const year = currentTime.getFullYear();
-  const hours = currentTime.getHours();
-  const minutes = currentTime.getMinutes();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
   var seconds = currentTime.getSeconds();
   if (day < 10) {
     day = '0' + day;
@@ -50,6 +50,12 @@ const MainWeather = ({ weatherData }) => {
   }
   if (seconds < 10) {
     seconds = '0' + seconds;
+  };
+  if (minutes < 10) {
+    minutes = '0' + minutes;
+  };
+  if (hours < 10) {
+    hours = '0' + hours;
   };
   return (
     <div className='w-4/5 bg-gray-500 text-white rounded-3xl p-4'>
