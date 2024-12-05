@@ -21,7 +21,7 @@ const Navbar = ({ onSearch, currentLocation }) => {
     return (
         <nav className='flex justify-between items-center p-3'>
             <div className='flex items-center gap-1 m-4'>
-                <img className='w-12' src="../../public/logo.jpg" alt="Logo" />
+                <img className='w-12' src="/logo.jpg" alt="Logo" />
                 <p className='font-bold text-2xl'>Weather Forecast</p>
             </div>
 
