@@ -83,7 +83,7 @@ const HighlightWeather = ({ weatherData, airQualityData }) => {
               <p>{o3} µg/m³</p>
             </div>
           </div>
-          <div className='mt-4'>
+          <div className='mt-20'>
             <h3 className='font-semibold text-xl'>Sunrise and Sunset</h3>
             <div className='text-center flex pt-4'>
               <div className='w-1/2 '>
@@ -122,7 +122,7 @@ const HighlightWeather = ({ weatherData, airQualityData }) => {
             <p>{weatherData?.clouds?.all}%</p>
           </div>
 
-          <div className='mt-2'>
+          <div className='mt-16 pt-2'>
             <h3 className='font-semibold text-xl'>Wind</h3>
             <div className='flex justify-between pt-4 items-center'>
               <div>

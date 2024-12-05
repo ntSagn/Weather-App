@@ -3,17 +3,25 @@ import FilterDramaIcon from '@mui/icons-material/FilterDrama';
 import { Button, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
-const Navbar = ({ onSearch }) => {
+const Navbar = ({ onSearch, currentLocation }) => {
     const [searchCity, setSearchCity] = useState('');
+
     const handleSearchClick = () => {
         if (searchCity.trim()) {
             onSearch(searchCity);
         }
     }
+
+    const handleGetCurrentLocation = () => {
+        if (currentLocation) {
+            onSearch(currentLocation);
+        }
+    }
+
     return (
         <nav className='flex justify-between items-center p-3'>
             <div className='flex items-center gap-1 m-4'>
-                <FilterDramaIcon />
+                <img className='w-12' src="../../public/logo.jpg" alt="Logo" />
                 <p className='font-bold text-2xl'>Weather Forecast</p>
             </div>
 
@@ -31,7 +39,7 @@ const Navbar = ({ onSearch }) => {
                 </Button>
             </div>
             <div className='mr-6'>
-                <Button variant='outlined' color='black' startIcon={<GpsFixedIcon />}>
+                <Button onClick={handleGetCurrentLocation} variant='outlined' color='black' startIcon={<GpsFixedIcon />}>
                     Current Location
                 </Button>
             </div>

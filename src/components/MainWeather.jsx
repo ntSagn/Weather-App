@@ -6,6 +6,7 @@ import SevereColdIcon from '@mui/icons-material/SevereCold';
 import DescriptionIcon from '@mui/icons-material/Description';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export const RenderTemperatureIcon = ({ temperatureCelcius }) => {
   if (temperatureCelcius > 30) {
@@ -23,10 +24,10 @@ export const RenderTemperatureIcon = ({ temperatureCelcius }) => {
 }
 
 const MainWeather = ({ weatherData }) => {
-  const temperatureCelcius = weatherData?.main?.temp || "Loading...";
-  const description = weatherData?.weather[0]?.description || "Loading...";
-  const location = weatherData?.name || "Loading...";
-  const city = weatherData?.sys?.country || "Loading...";
+  const temperatureCelcius = weatherData?.main?.temp || <CircularProgress color='white' size={25}/>;
+  const description = weatherData?.weather[0]?.description || <CircularProgress color='white' size={25}/>;
+  const location = weatherData?.name || <CircularProgress color='white' size={25}/>;
+  const city = weatherData?.sys?.country || <CircularProgress color='white' size={25}/>;
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
