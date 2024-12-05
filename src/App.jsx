@@ -37,7 +37,7 @@ function App() {
   }
 
   const fetchAirQualityData = (lat, lon) => {
-    const API_KEY1 = import.meta.env.VITE_API_KEY1;
+    const API_KEY1 = import.meta.env.VITE_API_KEY;
     fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY1}`)
       .then((res) => res.json())
       .then((data) => {
